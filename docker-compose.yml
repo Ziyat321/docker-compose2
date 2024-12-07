@@ -1,0 +1,12 @@
+services:
+  order:
+    build: order-server/.
+    ports:
+      - "8080:8080"
+    depends_on:
+      - payment
+
+  payment:
+    build: payment-server/.
+    ports:
+      - "9090:9090"
