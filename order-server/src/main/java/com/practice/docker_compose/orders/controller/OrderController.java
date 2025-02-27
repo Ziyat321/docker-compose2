@@ -1,7 +1,8 @@
-package controller;
+package com.practice.docker_compose.orders.controller;
 
-import model.Order;
-import model.Payment;
+import com.practice.docker_compose.orders.model.Order;
+import com.practice.docker_compose.orders.model.Payment;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -14,7 +15,8 @@ import java.util.List;
 public class OrderController {
     private List<Order> orders = new ArrayList<Order>();
     private RestTemplate restTemplate = new RestTemplate();
-    private String paymentServerUrl = "http://payment:9090/payment";
+    @Value("${payment.server.url}")
+    private String paymentServerUrl;
 
     @PostMapping
     public Order createOrder(@RequestParam String user,@RequestParam String address) {

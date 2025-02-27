@@ -6,6 +6,9 @@ services:
     depends_on:
       - payment
 
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
   payment:
     build: payment-server/.
     ports:

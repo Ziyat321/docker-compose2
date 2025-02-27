@@ -1,4 +1,4 @@
-package model;
+package com.practice.docker_compose.payments.model;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

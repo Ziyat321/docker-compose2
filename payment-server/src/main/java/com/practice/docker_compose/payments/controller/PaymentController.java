@@ -1,6 +1,6 @@
-package controller;
+package com.practice.docker_compose.payments.controller;
 
-import model.Payment;
+import com.practice.docker_compose.payments.model.Payment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
